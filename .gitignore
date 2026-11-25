@@ -1,0 +1,48 @@
+# ---- Build output ----
+target/
+*.class
+dependency-reduced-pom.xml
+
+# ---- IDEs ----
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+out/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs / local run output ----
+*.log
+local-runs/
+logs/
+emr-logs/
+
+# ---- Secrets and personal AWS settings: NEVER commit ----
+# Personal EMR settings (copied from config/emr.properties.example)
+config/emr.properties
+config/*.local.properties
+.aws/
+credentials
+*.pem
+*.ppk
+*.key
+.env
+.env.*
+
+# ---- Large data downloaded from S3 for analysis (keep only small test files in git) ----
+data/downloads/
+results/
+*.seq
+
+# ---- Hadoop local artifacts ----
+*.crc
+_SUCCESS

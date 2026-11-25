@@ -1,0 +1,61 @@
+coffee black strong	1990	3	2	1
+coffee black strong	1991	5	4	2
+coffee black strong	1992	2	1	1
+coffee black strong	1993	4	3	2
+coffee black strong	1994	6	5	3
+coffee black strong	1995	1	1	1
+coffee black tasty	1991	2	1	1
+coffee black tasty	1992	1	1	1
+coffee black tasty	1993	3	2	1
+coffee black hot	1999	1	1	1
+Coffee black strong	2000	2	1	1
+coffee instant elite	1980	4	3	2
+coffee instant elite	1981	4	3	2
+coffee instant elite	1982	2	1	1
+coffee instant elite	1983	3	2	1
+coffee instant elite	1984	5	4	2
+coffee instant granular	1985	1	1	1
+coffee instant granular	1986	2	1	1
+desk work green	1970	2	1	1
+desk work green	1971	2	1	1
+desk work green	1972	2	1	1
+desk work wooden	1970	3	2	1
+desk work wooden	1975	1	1	1
+machine learning model	2001	10	9	5
+machine learning model	2002	12	11	6
+machine learning model	2003	9	8	4
+machine learning model	2004	14	13	7
+machine learning model	2005	20	19	10
+machine learning model	2006	25	24	12
+machine learning model	2007	30	29	15
+machine learning model	2008	41	40	20
+machine learning algorithm	2003	5	4	2
+machine learning algorithm	2004	7	6	3
+machine learning algorithm	2005	9	8	4
+machine learning algorithm	2006	11	10	5
+machine learning course	2008	2	1	1
+new york city	1950	50	49	25
+new york city	1951	52	51	26
+new york city	1952	48	47	24
+new york city	1953	61	60	30
+new york city	1954	70	69	35
+new york city	1955	66	65	33
+new york times	1950	30	29	15
+new york times	1951	33	32	16
+new york times	1952	29	28	14
+new york times	1953	35	34	17
+new york state	1960	7	6	3
+café crème brûlée	1999	2	1	1
+café crème brûlée	2000	1	1	1
+the coffee black	1990	5	5	5
+coffee of black	1990	4	4	4
+coffee black The	1991	3	3	3
+new york and	1950	40	40	40
+
+coffee black hot	1990
+coffee black hot	abc	5	1	1
+coffee black hot	1990	-3	1	1
+coffee black hot	1990	zero	1	1
+coffee black	1990	5	5	5
+coffee black very hot	1990	5	5	5
+  machine   learning   model  	2009	3	3	3

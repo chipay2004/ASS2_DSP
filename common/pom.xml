@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  common – code shared by BOTH implementations. Must stay independent of Pairs / Stripes.
+  Packages:
+    dsp.a2.common            pure Java (no Hadoop): parsing, filtering, splitting, formula, output format
+    dsp.a2.common.hadoop     thin Hadoop helpers (counters, input formats, statistics, local config)
+    dsp.a2.common.tools      command-line tools for local work (reference estimator, comparison, stats tables)
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>dsp.a2</groupId>
+        <artifactId>assignment2</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>common</artifactId>
+    <packaging>jar</packaging>
+    <name>Assignment 2 - common</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>common</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!--
+              Single source of truth for the stop-word list: data/stopwords.txt is packaged into the
+              common jar (and therefore into both job jars) as the classpath resource "stopwords.txt".
+            -->
+            <resource>
+                <directory>${project.basedir}/../data</directory>
+                <includes>
+                    <include>stopwords.txt</include>
+                </includes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!-- Tests read data/ files relative to the repository root. -->
+                    <systemPropertyVariables>
+                        <repo.root>${project.basedir}/..</repo.root>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

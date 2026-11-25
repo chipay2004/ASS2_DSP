@@ -1,0 +1,36 @@
+# EMR / S3 settings for emr-launcher.
+#
+#   cp config/emr.properties.example config/emr.properties     # config/emr.properties is git-ignored
+#
+# NO credentials here. The AWS SDK / CLI read them from ~/.aws/credentials, environment variables or an
+# AWS Academy / SSO session. Never commit access keys.
+
+# Region of the public Google N-gram dataset (s3://datasets.elasticmapreduce) – keep the cluster there.
+aws.region=us-east-1
+
+# YOUR bucket (each partner may use his own). Runs are stored under s3://<bucket>/<impl>/<runId>/...
+s3.bucket=CHANGE-ME-your-bucket-name
+
+# Hadoop 3.4.1 (matches hadoop.version in pom.xml). Java 17 runtime by default on EMR 7.x.
+emr.releaseLabel=emr-7.12.0
+
+# The assignment suggests m4.large. EMR 7.x documents m5.xlarge as its smallest general-purpose type;
+# check with:  aws emr list-supported-instance-types --release-label emr-7.12.0 --region us-east-1
+# Same type and count for Pairs and Stripes (fair comparison, see docs/SHARED_CONTRACT.md).
+emr.instanceType=m5.xlarge
+emr.instanceCount=3
+
+# Optional: SSH key pair name (empty = no SSH access) and availability zone (empty = EMR decides).
+emr.ec2KeyName=
+emr.availabilityZone=
+
+# IAM roles. Default EMR roles; AWS Academy Learner Lab provides EMR_DefaultRole / EMR_EC2_DefaultRole.
+emr.serviceRole=EMR_DefaultRole
+emr.jobFlowRole=EMR_EC2_DefaultRole
+
+# The full English 3-gram corpus (SequenceFile, LZO block compressed).
+input.default=s3://datasets.elasticmapreduce/ngrams/books/20090715/eng-us-all/3gram/data
+
+# Main classes of the job jars (defaults shown).
+pairs.mainClass=dsp.a2.pairs.PairsDriver
+stripes.mainClass=dsp.a2.stripes.StripesDriver

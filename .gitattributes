@@ -1,0 +1,15 @@
+# Normalize line endings so both partners (Windows / macOS / Linux) produce identical diffs.
+* text=auto eol=lf
+
+# Shell scripts must keep LF or they fail on Linux / EMR.
+*.sh text eol=lf
+
+# Windows batch files keep CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.jar binary
+*.zip binary
+*.pdf binary
+*.png binary
